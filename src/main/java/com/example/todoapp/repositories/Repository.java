@@ -12,9 +12,9 @@ public interface Repository extends JpaRepository<Models, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM Task  t WHERE t.title=?1") //jpql
+    @Query(value = "DELETE FROM Models  m WHERE m.title=?1") //jpql
     void deleteByTitle(String title);
 
-    @Query(value = "SELECT t FROM Task  t WHERE t.title=?1") //jpql
+    @Query(value = "SELECT m FROM Models  m WHERE m.title=?1") //jpql
     Optional<Models> findByTitle(String title);
 }

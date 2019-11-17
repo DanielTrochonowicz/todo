@@ -19,16 +19,16 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <br> You can update your task here!<br>
-            You can change: description and date of task.<br><br>
-            <form action="/update" th:object="${task}">
-                <p>Task: </p>
-                <input type="text" name="title" required="true" th:value="${task.getTitle()}"/><br>
+            <br> You can update your models here!<br>
+            You can change: description and date of models.<br><br>
+            <form action="/update" th:object="${models}">
+                <p>Models: </p>
+                <input type="text" name="title" required="true" th:value="${models.getTitle()}"/><br>
                 <p>Description: </p>
-                <input type="text" name="description" required="true" th:value="${task.getDescription()}"/><br>
+                <input type="text" name="description" required="true" th:value="${models.getDescription()}"/><br>
                 <p>Date: </p>
                 <input type="text" id="datepicker" width="245" required="true" name="date"
-                       th:value="${task.getDate()}"/><br>
+                       th:value="${models.getDate()}"/><br>
                 <script>
                     $('#datepicker').datepicker({
                         uiLibrary: 'bootstrap4'

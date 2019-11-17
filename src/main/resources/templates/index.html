@@ -19,7 +19,7 @@
         <div class="col-sm-12">
 
             <form action="/add">
-                <br><p>Task: </p>
+                <br><p>Models: </p>
                 <input type="text" name="title" required="true" value=""><br><br>
                 <p>Description: </p>
                 <input type="text" name="description" required="true" value=""><br><br>
@@ -31,41 +31,42 @@
                     });
                 </script>
 
-                <input type="submit" value="Add task"/><br><br>
+                <input type="submit" value="Add models"/><br><br>
             </form>
 
             <!--
-                      <div th:each="taskItem : ${task}">
+                      <div th:each="modelsItem : ${models}">
                       <table class="table-table-dark">
-                      <span th:text="${taskItem.getId()}"></span>
-                      <span th:text="${taskItem.getTitle()}"></span>
-                      <span th:text="${taskItem.getDescription()}"></span>
-                      <span th:text="${taskItem.isStatus()}"></span>
-                      <span th:text="${taskItem.getDate()}"></span></table>
+                      <span th:text="${modelsItem.getId()}"></span>
+                      <span th:text="${modelsItem.getTitle()}"></span>
+                      <span th:text="${modelsItem.getDescription()}"></span>
+                      <span th:text="${modelsItem.isStatus()}"></span>
+                      <span th:text="${modelsItem.getDate()}"></span></table>
                   </div>-->
 
-            <table th:each="t : ${task}" class="table table-dark">
+            <table th:each="m : ${models}" class="table table-dark">
                 <tr>
                     <th>Number</th>
-                    <th>Task</th>
+                    <th>Models</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Status</th>
 
                 </tr>
                 <!--
-                                <tr th:each="t : ${task}">
+                                <tr th:each="m : ${model}">
                 -->
 
-                <td th:text="${t.getId()}"></td>
-                <td th:text="${t.getTitle()}"></td>
-                <td th:text="${t.getDescription()}"></td>
-                <td th:text="${t.getDate()}"></td>
-                <td th:text="${t.status()}"></td>
+
+                <td th:text="${m.getId()}"></td>
+                <td th:text="${m.getTitle()}"></td>
+                <td th:text="${m.setDescription()}"></td>
+                <td th:text="${m.getDate()}"></td>
+                <td th:text="${m.status()}"></td>
 
                 <td>
                     <form action="/delete" method="get">
-                        <input type="hidden" th:value="${t.getTitle()}" name="task">
+                        <input type="hidden" th:value="${m.getModels()}" name="models">
                         <button class="btn btn-sm btn-warning" type="submit">
                             <i class="fa fa-trash" aria-hidden="true"></i> Delete
                         </button>
@@ -74,7 +75,7 @@
 
                 <td>
                     <form th:action="@{/updateinfo}" method="get">
-                        <input type="hidden" th:value="${t.getTitle()}" name="task">
+                        <input type="hidden" th:value="${m.getTitle()}" name="models">
                         <button class="btn btn-sm btn-warning" type="submit">
                             <i class="fa fa-trash" aria-hidden="true"></i> Update
                         </button>

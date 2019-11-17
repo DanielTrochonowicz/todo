@@ -33,7 +33,7 @@ public class ModelService {
         repository.findByTitle(models.getTitle())
                 .ifPresent(m -> {
                     m.setDescription(models.getDescription());
-                    m.setData(models.getData());
+                    m.setDate(models.getDate());
                     m.isStatus(); //sprawdzić czy działa -dodać własnego gettera gdyby nie działało
                     repository.save(m);
                 });

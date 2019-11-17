@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -27,7 +29,7 @@ public class Models {
     private String description;
 
     @Column(name = "date")
-    private Data data;
+    private Date date;
 
     //ustawiać automatycznie jako false (niewykonano) przy dodawaniu nowego zadania
     @Column(name = "status")
@@ -57,12 +59,12 @@ public class Models {
         this.description = description;
     }
 
-    public Data getData() {
-        return data;
+    public Date getDate() {
+        return date;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public boolean isStatus() {
@@ -86,12 +88,12 @@ public class Models {
                 Objects.equals(id, models.id) &&
                 Objects.equals(title, models.title) &&
                 Objects.equals(description, models.description) &&
-                Objects.equals(data, models.data);
+                Objects.equals(date, models.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, data, status);
+        return Objects.hash(id, title, description, date, status);
     }
 
     @Override
@@ -100,7 +102,11 @@ public class Models {
                 " Id: " + id +
                 " Title: " + title + '\'' +
                 " Description: " + description + '\'' +
-                " Data: " + data +
+                " Date: " + date +
                 " Status: " + status;
+    }
+
+    public void addAttribute(String models, List<Models> modelsList) {
+
     }
 }
