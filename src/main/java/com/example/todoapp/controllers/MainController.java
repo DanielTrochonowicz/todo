@@ -21,8 +21,8 @@ public class MainController {
     }
 
     @GetMapping("/")
-    public String index(Models models) {
-        models.addAttribute("Models", modelService.getModelsList());
+    public String index(Model model) {
+        model.addAttribute("model", modelService.getModelsList());
         return "index";
     }
 
@@ -45,9 +45,9 @@ public class MainController {
     }
 
     @GetMapping("/updateinfo")
-    public String updateInfo(@RequestParam(value = "model") String title, Model model) {
+    public String updateInfo(@RequestParam(value = "models") String title, Model model) {
         Models model2 = modelService.getModelsByTitle(title);
-        model.addAttribute("model", model2);
+        model.addAttribute("models", model2);
         return "update";
     }
 }
