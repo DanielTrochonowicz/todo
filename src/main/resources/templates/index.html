@@ -44,7 +44,7 @@
                       <span th:text="${modelsItem.getDate()}"></span></table>
                   </div>-->
 
-            <table th:each="m : ${model}" class="table table-dark">
+            <table th:each="m : ${models}" class="table table-dark">
                 <tr>
                     <th>Number</th>
                     <th>Models</th>
@@ -60,13 +60,13 @@
 
                 <td th:text="${m.getId()}"></td>
                 <td th:text="${m.getTitle()}"></td>
-                <td th:text="${m.setDescription()}"></td>
+                <td th:text="${m.setDescription(1)}"></td>
                 <td th:text="${m.getDate()}"></td>
                 <td th:text="${m.status()}"></td>
 
                 <td>
                     <form action="/delete" method="get">
-                        <input type="hidden" th:value="${m.getModels()}" name="models">
+<!--                        <input type="hidden" th:value="${m.getModels()}" name="models">-->
                         <button class="btn btn-sm btn-warning" type="submit">
                             <i class="fa fa-trash" aria-hidden="true"></i> Delete
                         </button>
